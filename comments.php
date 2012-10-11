@@ -16,7 +16,7 @@ The comments page for Themebase
   }
 ?>
 
-<!-- You can start editing here. -->
+<?php /* You can start editing here. */ ?>
 
 <?php if ( have_comments() ) : ?>
 	
