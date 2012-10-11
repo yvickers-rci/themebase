@@ -1,0 +1,551 @@
+/*
+Theme Name: 	Themebase [SASS]
+Description: 	Skeleton framework for client sites.
+Author: 		Red Clay Interactive
+Author URI: 	www.redclayinteractive.com
+Version: 		1.0
+*/
+
+// Default Variables ======================================================================
+@import "modules/variables";
+
+// Client Variables ======================================================================
+$main-width: 980px;
+
+$default-font-size: 14;
+$default-line-height: 1.5;
+$default-font-family: $font-arial;
+
+$black: #000;
+$white: #fff;
+
+$red: #f00;
+$blue: #1990db;
+
+$link-color: $red;
+$link-hover: darken($link-color, 25%);
+
+// Mixins ======================================================================
+@import "modules/mixins";
+
+// Normalize ======================================================================
+@import "modules/normalize";
+
+// Main ======================================================================
+// Special =========================================================================
+// To use == border-radius | box-shadow | linear-gradient == attach == behavior:url(/PIE.htc)
+// For more examples and documentation:www.css3pie.com
+
+/* - Global
+=========================================================================*/
+body {
+	font:#{$default-font-size}px/#{$default-line-height}em $font-arial;
+}
+
+/* -- Chrome Frame prompt -- */
+.chromeframe {
+	color:#000;
+	background:#ccc;
+	padding:0.2em 0;
+	margin:0.2em 0;
+}
+
+/* -- Selections -- */
+::-moz-selection, ::selection {
+	//background:$black;
+	//color:$white;
+	text-shadow:none;
+}
+
+/* -- Links -- */
+a, a:visited {
+	color: $link-color;
+	@include transition(color 0.2s);
+
+	// on hover
+	&:hover, &:focus {
+		color: $link-hover;
+		@include transition(color 0.2s);
+	}
+
+	// on click
+	&:active {
+
+	}
+
+	// mobile tap color
+	&:link {
+		// this highlights links on iPhones/iPads.
+		// so it basically works like the :hover selector
+		// for mobile devices.
+		-webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
+	}
+}
+
+/* -- File Types -- */
+.pdf,
+.doc,
+.xls,
+.ppt {
+	background-position:0 0;
+	background-repeat:no-repeat;
+	padding-left:21px;
+	margin-left:2px;
+}
+.pdf { background-image:url(assets/images/icons/icon-pdf.png) }
+.doc { background-image:url(assets/images/icons/icon-doc.png) }
+.xls { background-image:url(assets/images/icons/icon-xls.png) }
+.ppt { background-image:url(assets/images/icons/icon-ppt.png) }
+
+/* -- RCI Contact Info -- */
+.rci-contact {
+	float:right;
+	width:100%;
+
+	h2 {
+		padding-bottom:5px;
+	}
+
+	p {
+		padding:0;
+	}
+}
+
+.inner-contact-info {
+	span {
+		display:block;
+	}
+}
+
+/* - Base styles
+=========================================================================*/
+html, button, input, select, textarea { color:#222 }
+
+hr { display:block; height:1px; border:0; border-top:1px solid #ccc; margin:1em 0; padding:0 }
+img { vertical-align:middle }
+fieldset { border:0; margin:0; padding:0 }
+textarea { resize:vertical }
+
+/* - Wrappers
+=========================================================================*/
+#content,
+.wrap {
+	width:$main-width;
+	margin:0 auto;
+}
+
+// Buttons =========================================================================
+.button, .button:visited {
+    font-family: $font-arial;
+    border: 1px solid darken($link-color, 13%);
+    border-top-color: darken($link-color, 7%);
+    border-left-color: darken($link-color, 7%);
+    padding: 4px 12px;
+    color: $white;
+    display: inline-block;
+    font-size: 11px;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: 0 1px rgba(0,0,0, .75);
+    cursor: pointer;
+    margin-bottom: 20px;
+    line-height: 21px;
+    @include border-radius(4px);
+    @include css-gradient($link-color, darken($link-color, 5%));
+
+
+    &:hover, &:focus {
+        color: $white;
+        border: 1px solid darken($link-color, 13%);
+        border-top-color: darken($link-color, 20%);
+        border-left-color: darken($link-color, 20%);
+        @include css-gradient(darken($link-color, 5%), darken($link-color, 10%));
+    }
+
+    &:active {
+        @include css-gradient(darken($link-color, 5%), $link-color);
+    }
+}
+
+.blue-button, .blue-button:visited {
+    border-color: darken($blue, 10%);
+    text-shadow: 0 1px 1px darken($blue, 10%);
+    @include css-gradient( $blue, darken($blue, 5%) );
+    @include box-shadow(inset 0 0 3px lighten($blue, 16%));
+
+    &:hover, &:focus {
+        border-color: darken($blue, 15%);
+        @include css-gradient( darken($blue, 4%), darken($blue, 10%) );
+    }
+    &:active {
+        @include css-gradient( darken($blue, 5%), $blue );
+    }
+}
+
+/* - Header
+=========================================================================*/
+header {
+	width:$main-width;
+	height:100px;
+	margin:0 auto;
+}
+
+// Logo
+.logo {
+	float:left;
+}
+
+// Header Navigation
+.nav-header {
+	@include navfix;
+}
+
+/* - Image Slider
+=========================================================================*/
+/* -- Slider -- */
+.rci-slider {
+	overflow:auto;
+	position:relative;
+}
+
+.rci-slide-container {
+	overflow:hidden;
+
+	.js-enabled & {
+		position:relative;
+	}
+}
+
+.rci-slider-viewport {
+	clear:both;
+	overflow:auto;
+
+	.js-enabled & {
+		overflow:hidden;
+		position:relative;
+	}
+}
+
+.rci-slide {
+	float:left;
+
+	.js-enabled & {
+		position:absolute;
+	}
+}
+
+// prev & next / play & pause
+.prev_next_play {
+	float:left;
+}
+
+.rci-slider-previous,
+.rci-slider-next,
+.rci-slider-play {
+	display:none;
+
+	.js-enabled & {
+		display:inline;
+	}
+}
+
+.playing {
+	color:#fff;
+	background:#000;
+}
+
+// slider numbers
+.rci-slider-navigation {
+	@include navfix;
+	clear:both;
+
+	.current {
+		color:#fff;
+		background:#000;
+	}
+}
+
+
+.rci-slider-viewport,
+.js-enabled .rci-slider-viewport,
+.js-enabled .rci-slide-container,
+.rci-slide {
+	width:$main-width;
+	height:450;
+}
+.rci-slider-viewport {
+	height:450px + 17;
+}
+.rci-slide-container {
+	width:10000px;
+}
+
+/* - Social
+=========================================================================*/
+.social {
+	&, span, a {
+		float:right;
+		overflow:hidden;
+		height:16px;
+		line-height:18px;
+	}
+
+	a {
+		float:left;
+		display:inline;
+		height:16px;
+		background:url(assets/images/icons/social-media-set-one.png) no-repeat;
+		padding:0 0 0 16px;
+		margin:0 2px;
+
+		&:hover {
+			text-decoration:none;
+		}
+
+		&.facebook 	{ background-position:0 0 }
+		&.twitter 	{ background-position:0 -32px }
+		&.linkedin 	{ background-position:0 -64px }
+		&.youtube 	{ background-position:0 -96px }
+		&.rss 		{ background-position:0 -128px }
+	}
+
+	&.labels {
+		a {
+			padding:0 0 0 20px;
+			margin:0 5px;
+		}
+	}
+
+	.pre-text,
+	.post-text {
+		float:left;
+		padding:0 5px;
+	}
+}
+
+/* - Content (bundled)
+=========================================================================*/
+
+/* - Content (homepage)
+=========================================================================*/
+
+/* - Content (internal)
+=========================================================================*/
+
+/* - Gravity Forms
+=========================================================================*/
+.gform_wrapper {
+	.gfield {
+		padding:10px 0;
+		margin:0;
+
+		&.hidden {
+			display:none;
+		}
+
+		.gfield_description {
+			padding:0;
+		}
+
+		label {
+			margin:3px 0 5px;
+		}
+
+		input,
+		select,
+		textarea {
+			margin:0;
+
+			&:focus {
+				border:1px solid #f0f;
+			}
+		}
+
+		input[type="checkbox"], input[type="radio"] {
+			&, ul & {
+				border:0 none;
+				margin:3px 0 0;
+			}
+
+			&:focus {
+				border:0 none;
+			}
+		}
+
+		input[disabled="disabled"] {
+			&,
+			&:hover,
+			&:focus {
+				cursor:default;
+				background:#ddd;
+				color:#bbb;
+				border:1px solid #ccc;
+			}
+		}
+
+		input[disabled="readonly"] {
+			&,
+			&:hover,
+			&:focus {
+				cursor:default;
+				background:#fff;
+				color:#555;
+				border:1px solid #ccc;
+			}
+		}
+
+		.add_list_item,
+		.delete_list_item {
+			position:relative;
+			top:-3px;
+		}
+	}
+
+	// Errors
+	div.validation_error,
+	span.gfield_required,
+	.gfield.gfield_error .gfield_description.validation_message,
+	.gfield .validation_message {
+		color:#c2323c;
+	}
+
+	.gfield.gfield_error {
+		input, textarea {
+			&:focus {
+				border:1px solid #c2323c;
+			}
+		}
+	}
+}
+
+/* - Page Numbers (wp-page-numbers plugin)
+=========================================================================*/
+#wp_page_numbers {
+	@include navfix;
+	clear:both;
+	width:100%;
+
+	ul {
+		float:right;
+	}
+
+	li, a {
+		padding:0 2px;
+	}
+
+	.active_page a, a:hover {
+
+	}
+}
+
+/* - WordPress Specific (borrowed from twentyeleven theme)
+=========================================================================*/
+/* -- Images -- */
+img[class*="align"], img[class*="wp-image-"], img[class*="attachment-"] { height:auto }
+img.size-full, img.size-large { width:auto; height:auto }
+
+/* aligning */
+img {
+	&.alignleft, &.alignright, &.aligncenter {
+		margin-bottom:10px;
+	}
+
+	&.alignleft {
+		display:inline;
+		float:left;
+		margin-right:10px;
+	}
+	&.alignright {
+		display:inline;
+		float:right;
+		margin-left:10px;
+	}
+	&.aligncenter {
+		clear:both;
+		display:block;
+		margin-left:auto;
+		margin-right:auto;
+	}
+}
+
+/* captions */
+.wp-caption {
+	max-width:96%;
+	background:#eee;
+	padding:9px;
+	margin-top:0.4em;
+	margin-bottom:1.625em;
+
+	img {
+		display:block;
+		max-width:98%;
+		border-color:#eee;
+		margin:0 auto;
+
+		a:focus &,
+		a:active &,
+		a:hover & {
+			background:#fff;
+			border-color:#ddd;
+		}
+	}
+
+	.wp-caption-text {
+		position:relative;
+		font-family:$font-georgia;
+		font-size:12px;
+		color:#555;
+		padding:10px 0 5px 40px;
+		margin-bottom:0.6em;
+
+		&:before {
+			position:absolute;
+			left:10px;
+			top:7px;
+			content:'\2014';
+			font:normal 14px bold $font-georgia;
+			color:#555;
+			margin-right:5px;
+		}
+	}
+}
+
+/* borders */
+img[class*="align"], img[class*="wp-image-"] {
+	border:1px solid #ddd;
+	padding:6px;
+
+	a:focus &, a:hover &, a:active & {
+		background:#eee;
+		border-color:#bbb;
+	}
+}
+
+/* - Footer
+=========================================================================*/
+footer {
+	clear:both;
+	width:$main-width;
+	height:100px;
+	margin:0 auto;
+}
+
+/* -- Footer Navigation -- */
+.nav-footer { @include navfix }
+
+/* -- Copyright -- */
+.copyright { float:left }
+
+/* -- Agency Info -- */
+.redclay { float:right }
+
+// Responsive ======================================================================
+@import "modules/responsive";
+
+// Helper Styles ======================================================================
+@import "modules/helpers";
+
+// Print Styles ======================================================================
+@media print {
+	@import "modules/print";
+}

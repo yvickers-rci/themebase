@@ -1,0 +1,91 @@
+// Clearing =========================================================================
+@mixin clearfix {
+  zoom: 1;
+    &:before, &:after { content: ""; display: table; }
+    &:after { clear: both; }
+}
+
+// BORDER-BOX ALL THE THINGS! =========================================================================
+// (http://paulirish.com/2012/box-sizing-border-box-ftw/)
+* { 
+    -webkit-box-sizing: border-box; 
+    -moz-box-sizing:    border-box; 
+    box-sizing:         border-box; 
+}
+
+// PX to EM Conversion =========================================================================
+@function pxem($pxval, $baseline: $default-font-size) {
+    @return ($pxval / $baseline) * 1em;
+}
+
+// CSS3 Border Radius =========================================================================
+@mixin border-radius($radius...) {
+    // defining prefixes so we can use them in mixins below
+    $prefixes: ("-webkit", "-moz", "-ms", "-o",  "");
+    @each $prefix in $prefixes {
+        #{$prefix}-border-radius: $radius;
+    }
+
+    border-radius: $radius;
+}
+
+// List / Menu / Nav Float =========================================================================
+@mixin navfix {
+    &, ul, li, a {
+        position:relative;
+        float:left;
+        list-style:none;
+        padding:0;
+        margin:0
+    }
+}
+
+// CSS3 Box-Shadow =========================================================================
+@mixin box-shadow($shadow...) {
+    // defining prefixes so we can use them in mixins below
+    $prefixes: ("-webkit", "-moz", "-ms", "-o",  "");
+    @each $prefix in $prefixes {
+        #{$prefix}-box-shadow: $shadow;
+    }
+
+    box-shadow: $shadow;
+}
+
+// CSS3 Text-Shadow =========================================================================
+@mixin text-shadow($x, $y, $blur, $color) {
+    text-shadow: $x $y $blur $color;
+    filter: dropshadow(color=#{$color}, offx=#{$x}, offy=#{$y});
+}
+
+// CSS3 Multi-Column Layout =========================================================================
+@mixin columns($columns, $gap) {
+    -moz-column-count: $columns;
+    -moz-column-gap: $gap;
+    -webkit-column-count: $columns;
+    -webkit-column-gap: $gap;
+    column-count: $columns;
+    column-gap: $gap;  
+}
+
+// CSS3 Transition =========================================================================
+@mixin transition($transition...) {
+    // defining prefixes so we can use them in mixins below
+    $prefixes: ("-webkit", "-moz", "-ms", "-o",  "");
+    @each $prefix in $prefixes {
+        #{$prefix}-transition: $transition;
+    }
+
+    transition: $transition;
+}
+
+// CSS3 Background Gradient =========================================================================
+@mixin css-gradient($from, $to) {
+    background-color: $to;
+    background-image: -webkit-gradient(linear, left top, left bottom, from($from), to($to)); // Chrome,Safari4+
+    background-image: -webkit-linear-gradient(top, $from, $to); // Chrome10+,Safari5.1+
+    background-image: -moz-linear-gradient(top, $from, $to); // FF3.6+
+    background-image: -ms-linear-gradient(top, $from 0%, $to 100%); // IE10+
+    background-image: -o-linear-gradient(top, $from, $to); // Opera 11.10+
+    background-image: linear-gradient(to bottom, $from, $to); // W3C
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$from}', endColorstr='#{$to}',GradientType=0 ); // IE6-9
+}
