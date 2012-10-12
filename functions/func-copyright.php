@@ -1,4 +1,5 @@
 <?php
+/* @plugin plugin dependent - move out of theme */
 // Dynamically updating copyright info in footer
 function copyright( $pre_text = '', $post_text = '' ) {
 	global $wpdb;

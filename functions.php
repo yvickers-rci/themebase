@@ -38,7 +38,7 @@ require_once( 'functions/func-related_items.php' );
 /****************************************
 TYPEKIT SUPPORT
 ****************************************/
-
+/* @plugin plugin dependent - move out of theme */
 function client_typekit_fonts() {
 	$protocol = ( is_ssl() ) ? 'https:' : 'http:';
 
@@ -52,6 +52,7 @@ add_action( 'wp_head', 'client_typekit_fonts' );
 /****************************************
 ADDITIONAL SCRIPTS AND STYLES
 ****************************************/
+/* @plugin plugin dependent - move out of theme */
 function yippee_more_scripts_and_styles() {
 	$protocol = ( is_ssl() ) ? 'https:' : 'http:';
 
