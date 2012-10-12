@@ -26,7 +26,7 @@
 		<p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
 	<![endif]-->
 
-	<header>
+	<header id="SiteHeader">
 		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" class="logo"><img src="http://placehold.it/300x100/000/fff&amp;text=the+logo" alt="REPLACE ME" class="logo"><!--<img src="<?php bloginfo( 'stylesheet_directory' ); ?>/assets/images/logo.png" alt="<?php echo esc_attr( get_bloginfo( 'name' , 'display') ); ?>">--></a>
 
 		<?php wp_nav_menu( array( 'theme_location' => 'header', 'container' => 'nav', 'container_class' => 'nav-header' ) ); ?>
