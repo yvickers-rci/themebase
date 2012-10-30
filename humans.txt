@@ -1,0 +1,28 @@
+/* TEAM */
+
+	Agency: Red Clay Interactive
+	Website: www.redclayinteractive.com
+	Twitter: @followredclay
+
+	Chef: [[ Lead ]]
+	Twitter: 
+
+	Trend Setter: [[ Creative ]]
+	Twitter: 
+	
+	Bit Whacker: [[ Developer ]]
+	Twitter: 
+
+/* THANKS */
+
+	WordPress for being great >> http://wordpress.org/
+	HTML5 Boilerplate >> http://html5boilerplate.com/
+	CSS3 Pie >> http://css3pie.com/
+	Bones Theme >> http://themble.com/bones/
+	Red Clay Interactive >> http://www.redclayinteractive.com/
+
+/* SITE */
+
+	Standards: HTML5 / CSS3 / SASS
+	Components: Modernizr, jQuery, CSS3 Pie
+	Programs: Photoshop, Dreamweaver, Sublime 2, ScoutApp, GitHub
