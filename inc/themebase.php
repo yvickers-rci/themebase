@@ -3,8 +3,7 @@
 WORDPRESS CLEANUP
 ( parts borrowed from Bones http://themble.com/bones/ )
 ****************************************/
-
-// we're firing all out initial functions at the start
+// Banging on all cylinders here!
 add_action( 'after_setup_theme','themebase_cleanup', 15 );
 
 function themebase_cleanup() {
@@ -16,8 +15,6 @@ function themebase_cleanup() {
 	add_filter( 'wp_head', 'themebase_remove_wp_widget_recent_comments_style', 1 );
 	// clean up comment styles in the head
 	add_action( 'wp_head', 'themebase_remove_recent_comments_style', 1 );
-	// nice, neat, well-formed page titles
-	add_filter( 'wp_title', 'themebase_wp_title', 10, 2 );
 
 	// enqueue base scripts and styles
 	add_action( 'wp_enqueue_scripts', 'themebase_scripts_and_styles', 999 );
@@ -40,7 +37,6 @@ function themebase_cleanup() {
 WP_HEAD CLEANUP
 ( parts borrowed from Bones http://themble.com/bones/ )
 ****************************************/
-
 function themebase_head_cleanup() {
 	// category feeds
 	// remove_action( 'wp_head', 'feed_links_extra', 3 );
@@ -91,7 +87,6 @@ function themebase_remove_recent_comments_style() {
 	}
 }
 
-
 // Page Titles ( borrowed from Twenty Twelve 1.0 )
 function themebase_wp_title( $title, $sep ) {
 	global $paged, $page;
@@ -99,26 +94,28 @@ function themebase_wp_title( $title, $sep ) {
 	if ( is_feed() )
 		return $title;
 
-	// Add the blog name.
+	// Add the site name.
 	$title .= get_bloginfo( 'name' );
 
-	// Add the blog description for the home/front page.
+	// Add the site description for the home/front page.
 	$site_description = get_bloginfo( 'description', 'display' );
 	if ( $site_description && ( is_home() || is_front_page() ) )
 		$title = "$title $sep $site_description";
 
 	// Add a page number if necessary.
 	if ( $paged >= 2 || $page >= 2 )
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'themebase' ), max( $paged, $page ) );
+		$title = "$title $sep " . sprintf( __( 'Page %s', 'twentytwelve' ), max( $paged, $page ) );
 
 	return $title;
 }
+// nice, neat, well-formed page titles
+add_filter( 'wp_title', 'themebase_wp_title', 10, 2 );
+
 
 /****************************************
 ENQUEUE SCRIPTS AND STYLES
 ( borrowed from Twenty Twelve 1.0 )
 *****************************************/
-
 function themebase_scripts_and_styles() {
 	$protocol = ( is_ssl() ) ? 'https:' : 'http:';
 
@@ -136,8 +133,12 @@ function themebase_scripts_and_styles() {
 	wp_enqueue_script( 'general', "$general_js_dir/assets/js/general.js", array(), '1', true );
 	
 	// RCI Slider 'fader' script [footer]
+	/*
+	 * @plugin rciadmin plugin dependent
+	 *
 	$fader_js_dir = ( file_exists( STYLESHEETPATH . '/assets/js/fader.js' ) ) ? get_stylesheet_directory_uri() : get_template_directory_uri();
 	wp_register_script( 'fader', "$fader_js_dir/assets/js/fader.js", array(), '1', true );
+	 */
 
 	// Stylesheet [header]
 	wp_enqueue_style( 'themebase-style', get_stylesheet_uri() );
@@ -177,7 +178,6 @@ function themebase_theme_support() {
 RANDOM CLEANUP ITEMS
 ( parts borrowed from Bones http://themble.com/bones/ )
 ****************************************/
-
 // remove the p from around imgs (http://css-tricks.com/snippets/wordpress/remove-paragraph-tags-from-around-images/)
 function themebase_filter_ptags_on_images( $content ){
 	return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);

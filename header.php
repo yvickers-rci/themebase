@@ -11,6 +11,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width">
 
+<?php // FaceBook Meta Tags ?>
+<meta property="og:image" content="<?php bloginfo( 'stylesheet_directory' ); ?>/assets/images/logo.png">
+<meta property="og:title" content="<?php wp_title( '|', true, 'right' ); ?>">
+<meta property="og:site_name" content="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+
 <link type="text/plain" rel="author" href="<?php bloginfo( 'url' ); ?>/humans.txt">
 
 <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">

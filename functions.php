@@ -2,23 +2,21 @@
 /****************************************
 INCLUDE NEEDED FILES
 ****************************************/
-
 /*
-1. inc/thembase.php
-    - head cleanup
-	- enqueueing scripts & styles
-	- theme support functions
-    - custom menu output & fallbacks
-	- removing <p> from around images
-	- customizing the post excerpt
-*/
+ * 1. inc/thembase.php
+ *	  - head cleanup
+ *	  - enqueueing scripts & styles
+ *	  - theme support functions
+ *	  - custom menu output & fallbacks
+ *	  - removing <p> from around images
+ *	  - customizing the post excerpt
+ */
 require_once('inc/themebase.php'); // DO NOT REMOVE
 
 
 /****************************************
 EXTRA FRONTEND FUNCTIONS
 ****************************************/
-
 // Dynamically updating copyright info in footer
 require_once( 'functions/func-copyright.php' );
 
@@ -31,33 +29,37 @@ require_once( 'functions/func-breadcrumbs.php' );
 // Side Navigation
 require_once( 'functions/func-side_nav.php' );
 
-// Related Items
-require_once( 'functions/func-related_items.php' );
+// Related Items - REQUIRES MAJOR ADMIN CUSTOMIZATION
+// USE AT YOUR OWN RISK OF EXTRA DEVELOPMENT TIME
+// require_once( 'functions/func-related_items.php' );
 
 
 /****************************************
 TYPEKIT SUPPORT
 ****************************************/
-/* @plugin plugin dependent - move out of theme */
+/*
+ * Uncomment to use typekit
+ *
 function client_typekit_fonts() {
 	$protocol = ( is_ssl() ) ? 'https:' : 'http:';
+	$typekit_id = 'TYPEKIT_ID_HERE';
 
 	// TypeKit  [header]
-	echo "<script type=\"text/javascript\" src=\"$protocol//use.typekit.net/uio0ypz.js\"></script>"."\n";
+	echo "<script type=\"text/javascript\" src=\"$protocol//use.typekit.net/$typekit_id.js\"></script>"."\n";
 	echo '<script type="text/javascript">try{Typekit.load();}catch(e){}</script>'."\n";
 }
 add_action( 'wp_head', 'client_typekit_fonts' );
+*/
 
 
 /****************************************
 ADDITIONAL SCRIPTS AND STYLES
 ****************************************/
-/* @plugin plugin dependent - move out of theme */
 function yippee_more_scripts_and_styles() {
 	$protocol = ( is_ssl() ) ? 'https:' : 'http:';
 
 	// AddThis [footer]
-	$addthis_account_id = ( get_option( 'rci_addthis' ) ) ? get_option( 'rci_addthis' ) : 'ra-4f1d78b61cb91d91';
+	$addthis_account_id = 'ADDTHIS_ID_HERE'; /* @plugin rciadmin plugin dependent - ( get_option( 'rci_addthis' ) ) ? get_option( 'rci_addthis' ) : ''; */
 	wp_enqueue_script( 'addthis', "$protocol//s7.addthis.com/js/300/addthis_widget.js#pubid=$addthis_account_id", array(), '1', true );
 
 	// Flexslider script [footer]
@@ -79,26 +81,24 @@ add_action( 'wp_enqueue_scripts', 'yippee_more_scripts_and_styles' );
 /****************************************
 THUMBNAIL SIZE OPTIONS
 ****************************************/
-
 // Thumbnail sizes
-add_image_size( 'thumb-800600', 800, 600, true );
-add_image_size( 'thumb-480320', 480, 320, true );
+add_image_size( 'thumb-800x600', 800, 600, true );
+add_image_size( 'thumb-480x320', 480, 320, true );
 
 
 /****************************************
 DYANMIC / ACTIVE SIDEBARS
 ****************************************/
-
 // Sidebars & Widgetizes Areas
 function themebase_register_sidebars() {
     register_sidebar(array(
-    	'id' 			=> 'sidebar1',
-    	'name' 			=> 'Sidebar 1',
-    	'description' 	=> 'The first (primary) sidebar.',
+    	'id' 		 => 'sidebar',
+    	'name' 		 => __( 'Sidebar' ),
+    	'description' 	 => __( '' ),
     	'before_widget' => '<div id="%1$s" class="widget %2$s">',
-    	'after_widget' 	=> '</div>',
-    	'before_title' 	=> '<h4 class="widgettitle">',
-    	'after_title' 	=> '</h4>',
+    	'after_widget'  => '</div>',
+    	'before_title'  => '<h4 class="widgettitle">',
+    	'after_title' 	 => '</h4>',
     ));
 }
 
@@ -106,7 +106,9 @@ function themebase_register_sidebars() {
 /****************************************
 WOOCOMMERCE CART CHANGES
 ****************************************/
-
+/*
+ * Uncomment if using WooCommerce
+ *
 function themebase_change_cart_label() {
 	global $menu;
 	global $submenu;
@@ -115,13 +117,12 @@ function themebase_change_cart_label() {
 	$menu["55.5"][0] = 'Store';
 }
 add_action( 'admin_menu', 'themebase_change_cart_label' );
-
+*/
 
 /****************************************
 COMMENT LAYOUT 
-( borrowed from Bones http://themble.com/themebase/ )
+( borrowed from Bones http://themble.com/bones/ )
 ****************************************/
-
 function themebase_comments($comment, $args, $depth) {
    $GLOBALS['comment'] = $comment; ?>
 	<li <?php comment_class(); ?>>
@@ -161,9 +162,8 @@ function themebase_comments($comment, $args, $depth) {
 
 /****************************************
 SEARCH FORM LAYOUT 
-( borrowed from Bones http://themble.com/themebase/ )
+( borrowed from Bones http://themble.com/bones/ )
 ****************************************/
-
 // Search Form
 function themebase_wpsearch($form) {
 	$form = '<form role="search" method="get" id="searchform" action="' . home_url( '/' ) . '" >
