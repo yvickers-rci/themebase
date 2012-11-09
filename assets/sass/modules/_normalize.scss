@@ -1,24 +1,27 @@
-/* - HTML5 display definitions
-=========================================================================*/
+/* -- Normalize styles
+======================================================================*/
+
+/* -- HTML5 display definitions
+======================================================================*/
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary { display:block }
 audio, canvas, video { display:inline-block; *display:inline; *zoom:1 }
 audio:not([controls]) { display:none; height:0 }
 [hidden] { display:none }
 
-/* - Base
-=========================================================================*/
+/* -- Base
+======================================================================*/
 html { font-size:100%; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100% }
 
 html, button, input, select, textarea { font-family:sans-serif }
 body { margin:0 }
 
-/* - Links
-=========================================================================*/
+/* -- Links
+======================================================================*/
 a:focus { outline:thin dotted }
 a:active, a:hover { outline:0 }
 
-/* - Typography
-=========================================================================*/
+/* -- Typography
+======================================================================*/
 h1 { font-size:2em; margin:0.67em 0 }
 h2 { font-size:1.5em; margin:0.83em 0 }
 h3 { font-size:1.17em; margin:1em 0 }
@@ -40,24 +43,24 @@ sub, sup { font-size:75%; line-height:0; position:relative; vertical-align:basel
 sup { top:-0.5em }
 sub { bottom:-0.25em }
 
-/* - Lists
-=========================================================================*/
+/* -- Lists
+======================================================================*/
 dl, menu, ol, ul { margin:1em 0 }
 dd { margin:0 0 0 40px }
 menu, ol, ul { padding:0 0 0 40px }
 nav ul, nav ol { list-style:none; list-style-image:none }
 
-/* - Embedded content
-=========================================================================*/
+/* -- Embedded content
+======================================================================*/
 img { border:0; -ms-interpolation-mode:bicubic }
 svg:not(:root) { overflow:hidden }
 
-/* - Figures
-=========================================================================*/
+/* -- Figures
+======================================================================*/
 figure { margin:0 }
 
-/* - Forms
-=========================================================================*/
+/* -- Forms
+======================================================================*/
 form { margin:0 }
 fieldset { border:1px solid #c0c0c0; margin:0 2px; padding:0.35em 0.625em 0.75em }
 legend { border:0; padding:0; white-space:normal; *margin-left:-7px }
@@ -71,6 +74,6 @@ input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webki
 button::-moz-focus-inner, input::-moz-focus-inner { border:0; padding:0 }
 textarea { overflow:auto; vertical-align:top }
 
-/* - Tables
-=========================================================================*/
+/* -- Tables
+======================================================================*/
 table { border-collapse:collapse; border-spacing:0 }

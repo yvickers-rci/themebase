@@ -1,0 +1,85 @@
+/* -- Gravity Forms
+======================================================================*/
+.gform_wrapper {
+	.gfield {
+		padding:10px 0;
+		margin:0;
+
+		&.hidden {
+			display:none;
+		}
+
+		.gfield_description {
+			padding:0;
+		}
+
+		label {
+			margin:3px 0 5px;
+		}
+
+		input,
+		select,
+		textarea {
+			margin:0;
+
+			&:focus {
+				border:1px solid #f0f;
+			}
+		}
+
+		input[type="checkbox"], input[type="radio"] {
+			&, ul & {
+				border:0 none;
+				margin:3px 0 0;
+			}
+
+			&:focus {
+				border:0 none;
+			}
+		}
+
+		input[disabled="disabled"] {
+			&,
+			&:hover,
+			&:focus {
+				cursor:default;
+				background:#ddd;
+				color:#bbb;
+				border:1px solid #ccc;
+			}
+		}
+
+		input[disabled="readonly"] {
+			&,
+			&:hover,
+			&:focus {
+				cursor:default;
+				background:#fff;
+				color:#555;
+				border:1px solid #ccc;
+			}
+		}
+
+		.add_list_item,
+		.delete_list_item {
+			position:relative;
+			top:-3px;
+		}
+	}
+
+	// Errors
+	div.validation_error,
+	span.gfield_required,
+	.gfield.gfield_error .gfield_description.validation_message,
+	.gfield .validation_message {
+		color:#c2323c;
+	}
+
+	.gfield.gfield_error {
+		input, textarea {
+			&:focus {
+				border:1px solid #c2323c;
+			}
+		}
+	}
+}

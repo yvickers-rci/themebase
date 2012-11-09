@@ -1,0 +1,82 @@
+/* -- WordPress Specific (borrowed from twentyeleven theme)
+======================================================================*/
+/* -- Images -- */
+img[class*="align"], img[class*="wp-image-"], img[class*="attachment-"] { height:auto }
+img.size-full, img.size-large { width:auto; height:auto }
+
+/* -- Aligning -- */
+img {
+	&.alignleft, &.alignright, &.aligncenter {
+		margin-bottom:10px;
+	}
+
+	&.alignleft {
+		display:inline;
+		float:left;
+		margin-right:10px;
+	}
+	&.alignright {
+		display:inline;
+		float:right;
+		margin-left:10px;
+	}
+	&.aligncenter {
+		clear:both;
+		display:block;
+		margin-left:auto;
+		margin-right:auto;
+	}
+}
+
+/* -- Captions -- */
+.wp-caption {
+	max-width:96%;
+	background:#eee;
+	padding:9px;
+	margin-top:0.4em;
+	margin-bottom:1.625em;
+
+	img {
+		display:block;
+		max-width:98%;
+		border-color:#eee;
+		margin:0 auto;
+
+		a:focus &,
+		a:active &,
+		a:hover & {
+			background:#fff;
+			border-color:#ddd;
+		}
+	}
+
+	.wp-caption-text {
+		position:relative;
+		font-family:$font-georgia;
+		font-size:12px;
+		color:#555;
+		padding:10px 0 5px 40px;
+		margin-bottom:0.6em;
+
+		&:before {
+			position:absolute;
+			left:10px;
+			top:7px;
+			content:'\2014';
+			font:normal 14px bold $font-georgia;
+			color:#555;
+			margin-right:5px;
+		}
+	}
+}
+
+/* -- Borders -- */
+img[class*="align"], img[class*="wp-image-"] {
+	border:1px solid #ddd;
+	padding:6px;
+
+	a:focus &, a:hover &, a:active & {
+		background:#eee;
+		border-color:#bbb;
+	}
+}

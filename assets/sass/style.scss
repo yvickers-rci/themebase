@@ -6,10 +6,12 @@ Author URI: 	www.redclayinteractive.com
 Version: 		1.0
 */
 
-// Default Variables ======================================================================
+// -- Default Variables
+// ======================================================================
 @import "modules/variables";
 
-// Client Variables ======================================================================
+// -- Client Variables
+// ======================================================================
 $main-width: 980px;
 
 $default-font-size: 14;
@@ -25,19 +27,26 @@ $blue: #1990db;
 $link-color: $red;
 $link-hover: darken($link-color, 25%);
 
-// Mixins ======================================================================
+// -- Mixins
+// ======================================================================
 @import "modules/mixins";
 
-// Normalize ======================================================================
+// -- Normalize
+// ======================================================================
 @import "modules/normalize";
 
-// Main ======================================================================
-// Special =========================================================================
+// -- Main
+// ======================================================================
+
+// -- Special
+// ======================================================================
+
 // To use == border-radius | box-shadow | linear-gradient == attach == behavior:url(/PIE.htc)
 // For more examples and documentation:www.css3pie.com
 
-/* - Global
-=========================================================================*/
+
+/* -- Global
+======================================================================*/
 body {
 	font:#{$default-font-size}px/#{$default-line-height}em $font-arial;
 }
@@ -117,8 +126,8 @@ a, a:visited {
 	}
 }
 
-/* - Base styles
-=========================================================================*/
+/* -- Base styles
+======================================================================*/
 html, button, input, select, textarea { color:#222 }
 
 hr { display:block; height:1px; border:0; border-top:1px solid #ccc; margin:1em 0; padding:0 }
@@ -126,15 +135,16 @@ img { vertical-align:middle }
 fieldset { border:0; margin:0; padding:0 }
 textarea { resize:vertical }
 
-/* - Wrappers
-=========================================================================*/
+/* -- Wrappers
+======================================================================*/
 #content,
 .wrap {
 	width:$main-width;
 	margin:0 auto;
 }
 
-// Buttons =========================================================================
+// -- Buttons
+// ======================================================================
 .button, .button:visited {
     font-family: $font-arial;
     border: 1px solid darken($link-color, 13%);
@@ -182,8 +192,8 @@ textarea { resize:vertical }
     }
 }
 
-/* - Header
-=========================================================================*/
+/* -- Header
+======================================================================*/
 header {
 	width:$main-width;
 	height:100px;
@@ -200,8 +210,8 @@ header {
 	@include navfix;
 }
 
-/* - Image Slider
-=========================================================================*/
+/* -- Image Slider
+======================================================================*/
 /* -- Slider -- */
 .rci-slider {
 	overflow:auto;
@@ -234,7 +244,8 @@ header {
 	}
 }
 
-// prev & next / play & pause
+// -- Slider Controls
+// ======================================================================
 .prev_next_play {
 	float:left;
 }
@@ -254,7 +265,8 @@ header {
 	background:#000;
 }
 
-// slider numbers
+// -- Slider Numbers
+// ======================================================================
 .rci-slider-navigation {
 	@include navfix;
 	clear:both;
@@ -279,8 +291,8 @@ header {
 	width:10000px;
 }
 
-/* - Social
-=========================================================================*/
+/* -- Social
+======================================================================*/
 .social {
 	&, span, a {
 		float:right;
@@ -322,14 +334,14 @@ header {
 	}
 }
 
-/* - Content (bundled)
-=========================================================================*/
+/* -- Content (bundled)
+======================================================================*/
 
-/* - Content (homepage)
-=========================================================================*/
+/* -- Content (homepage)
+======================================================================*/
 
-/* - Content (internal)
-=========================================================================*/
+/* -- Content (internal)
+======================================================================*/
 /* -- Side Navigation -- */
 .nav-side {
 	position:relative;
@@ -390,197 +402,20 @@ header {
 	}
 }
 
-/* - Gravity Forms
-=========================================================================*/
-.gform_wrapper {
-	.gfield {
-		padding:10px 0;
-		margin:0;
+// -- Forms
+// ======================================================================
+@import "modules/gravityforms";
 
-		&.hidden {
-			display:none;
-		}
+// -- Page Numbers
+// ======================================================================
+@import "modules/pagenumbers";
 
-		.gfield_description {
-			padding:0;
-		}
+// -- WordPress
+// ======================================================================
+@import "modules/wordpress";
 
-		label {
-			margin:3px 0 5px;
-		}
-
-		input,
-		select,
-		textarea {
-			margin:0;
-
-			&:focus {
-				border:1px solid #f0f;
-			}
-		}
-
-		input[type="checkbox"], input[type="radio"] {
-			&, ul & {
-				border:0 none;
-				margin:3px 0 0;
-			}
-
-			&:focus {
-				border:0 none;
-			}
-		}
-
-		input[disabled="disabled"] {
-			&,
-			&:hover,
-			&:focus {
-				cursor:default;
-				background:#ddd;
-				color:#bbb;
-				border:1px solid #ccc;
-			}
-		}
-
-		input[disabled="readonly"] {
-			&,
-			&:hover,
-			&:focus {
-				cursor:default;
-				background:#fff;
-				color:#555;
-				border:1px solid #ccc;
-			}
-		}
-
-		.add_list_item,
-		.delete_list_item {
-			position:relative;
-			top:-3px;
-		}
-	}
-
-	// Errors
-	div.validation_error,
-	span.gfield_required,
-	.gfield.gfield_error .gfield_description.validation_message,
-	.gfield .validation_message {
-		color:#c2323c;
-	}
-
-	.gfield.gfield_error {
-		input, textarea {
-			&:focus {
-				border:1px solid #c2323c;
-			}
-		}
-	}
-}
-
-/* - Page Numbers (wp-page-numbers plugin)
-=========================================================================*/
-#wp_page_numbers {
-	@include navfix;
-	clear:both;
-	width:100%;
-
-	ul {
-		float:right;
-	}
-
-	li, a {
-		padding:0 2px;
-	}
-
-	.active_page a, a:hover {
-
-	}
-}
-
-/* - WordPress Specific (borrowed from twentyeleven theme)
-=========================================================================*/
-/* -- Images -- */
-img[class*="align"], img[class*="wp-image-"], img[class*="attachment-"] { height:auto }
-img.size-full, img.size-large { width:auto; height:auto }
-
-/* aligning */
-img {
-	&.alignleft, &.alignright, &.aligncenter {
-		margin-bottom:10px;
-	}
-
-	&.alignleft {
-		display:inline;
-		float:left;
-		margin-right:10px;
-	}
-	&.alignright {
-		display:inline;
-		float:right;
-		margin-left:10px;
-	}
-	&.aligncenter {
-		clear:both;
-		display:block;
-		margin-left:auto;
-		margin-right:auto;
-	}
-}
-
-/* captions */
-.wp-caption {
-	max-width:96%;
-	background:#eee;
-	padding:9px;
-	margin-top:0.4em;
-	margin-bottom:1.625em;
-
-	img {
-		display:block;
-		max-width:98%;
-		border-color:#eee;
-		margin:0 auto;
-
-		a:focus &,
-		a:active &,
-		a:hover & {
-			background:#fff;
-			border-color:#ddd;
-		}
-	}
-
-	.wp-caption-text {
-		position:relative;
-		font-family:$font-georgia;
-		font-size:12px;
-		color:#555;
-		padding:10px 0 5px 40px;
-		margin-bottom:0.6em;
-
-		&:before {
-			position:absolute;
-			left:10px;
-			top:7px;
-			content:'\2014';
-			font:normal 14px bold $font-georgia;
-			color:#555;
-			margin-right:5px;
-		}
-	}
-}
-
-/* borders */
-img[class*="align"], img[class*="wp-image-"] {
-	border:1px solid #ddd;
-	padding:6px;
-
-	a:focus &, a:hover &, a:active & {
-		background:#eee;
-		border-color:#bbb;
-	}
-}
-
-/* - Footer
-=========================================================================*/
+/* -- Footer
+======================================================================*/
 footer {
 	clear:both;
 	width:$main-width;
@@ -597,13 +432,16 @@ footer {
 /* -- Agency Info -- */
 .redclay { float:right }
 
-// Responsive ======================================================================
+// -- Responsive
+// ======================================================================
 @import "modules/responsive";
 
-// Helper Styles ======================================================================
+// -- Helper Styles
+// ======================================================================
 @import "modules/helpers";
 
-// Print Styles ======================================================================
+// -- Print Styles
+// ======================================================================
 @media print {
 	@import "modules/print";
 }

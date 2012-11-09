@@ -1,0 +1,19 @@
+/* -- Page Numbers (wp-page-numbers plugin)
+======================================================================*/
+#wp_page_numbers {
+	@include navfix;
+	clear:both;
+	width:100%;
+
+	ul {
+		float:right;
+	}
+
+	li, a {
+		padding:0 2px;
+	}
+
+	.active_page a, a:hover {
+
+	}
+}

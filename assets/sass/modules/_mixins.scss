@@ -1,24 +1,28 @@
-// Clearing =========================================================================
+// -- Clearing
+// ======================================================================
 @mixin clearfix {
   zoom: 1;
     &:before, &:after { content: ""; display: table; }
     &:after { clear: both; }
 }
 
-// BORDER-BOX ALL THE THINGS! =========================================================================
+// -- BORDER-BOX ALL THE THINGS!
 // (http://paulirish.com/2012/box-sizing-border-box-ftw/)
+// ======================================================================
 * { 
     -webkit-box-sizing: border-box; 
     -moz-box-sizing:    border-box; 
     box-sizing:         border-box; 
 }
 
-// PX to EM Conversion =========================================================================
+// -- PX to EM Conversion
+// ======================================================================
 @function pxem($pxval, $baseline: $default-font-size) {
     @return ($pxval / $baseline) * 1em;
 }
 
-// CSS3 Border Radius =========================================================================
+// -- CSS3 Border Radius
+// ======================================================================
 @mixin border-radius($radius...) {
     // defining prefixes so we can use them in mixins below
     $prefixes: ("-webkit", "-moz", "-ms", "-o",  "");
@@ -29,7 +33,8 @@
     border-radius: $radius;
 }
 
-// List / Menu / Nav Float =========================================================================
+// -- List / Menu / Nav Float
+// ======================================================================
 @mixin navfix {
     &, ul, li, a {
         position:relative;
@@ -40,7 +45,8 @@
     }
 }
 
-// CSS3 Box-Shadow =========================================================================
+// -- CSS3 Box-Shadow
+// ======================================================================
 @mixin box-shadow($shadow...) {
     // defining prefixes so we can use them in mixins below
     $prefixes: ("-webkit", "-moz", "-ms", "-o",  "");
@@ -51,13 +57,15 @@
     box-shadow: $shadow;
 }
 
-// CSS3 Text-Shadow =========================================================================
+// -- CSS3 Text-Shadow
+// ======================================================================
 @mixin text-shadow($x, $y, $blur, $color) {
     text-shadow: $x $y $blur $color;
     filter: dropshadow(color=#{$color}, offx=#{$x}, offy=#{$y});
 }
 
-// CSS3 Multi-Column Layout =========================================================================
+// -- CSS3 Multi-Column Layout
+// ======================================================================
 @mixin columns($columns, $gap) {
     -moz-column-count: $columns;
     -moz-column-gap: $gap;
@@ -67,7 +75,8 @@
     column-gap: $gap;  
 }
 
-// CSS3 Transition =========================================================================
+// -- CSS3 Transition
+// ======================================================================
 @mixin transition($transition...) {
     // defining prefixes so we can use them in mixins below
     $prefixes: ("-webkit", "-moz", "-ms", "-o",  "");
@@ -78,7 +87,8 @@
     transition: $transition;
 }
 
-// CSS3 Background Gradient =========================================================================
+// -- CSS3 Background Gradient
+// ======================================================================
 @mixin css-gradient($from, $to) {
     background-color: $to;
     background-image: -webkit-gradient(linear, left top, left bottom, from($from), to($to)); // Chrome,Safari4+
