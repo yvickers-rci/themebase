@@ -5,4 +5,6 @@ Utilizes:
 - [WordPress](http://www.wordpress.org/)
 - [HTML5 Boilerplate](http://www.html5boilerplate.com/)
 - [SASS](http://www.sass-lang.com/)
-- [Bones Theme](http://themble.com/bones/)
+- [Bones Theme](http://www.themble.com/bones/)
+- [Roots Theme](http://www.rootstheme.com/)
+- [Twitter Bootstrap](http://twitter.github.com/bootstrap/)
