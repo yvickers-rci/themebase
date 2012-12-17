@@ -20,17 +20,21 @@ require_once( 'inc/comments.php' ); // comments overhaul
 
 /*
  * 2. Various Theme Keys and "Enables"
+ *	 - Use Local jQuery
+ *	 - jQuery Version
  *	 - Typekit
  *	 - AddThis
  *	 - YV Image Fader
  *	 - Flexslider
  *	 - WooCommerce
  */
+define( 'LOCAL_JQUERY', true ); // default: false
+define( 'JQUERY_VERSION', NULL ); // default: 1.8.3
 define( 'TYPEKIT_ID', '' );
 define( 'ADDTHIS_ID', '' );
-define( 'FLEXSLIDER', false ); // change to true to use
-define( 'YVFADER', false ); // change to true to use
-define( 'WOOCOMMERCE', false ); // change to true to use
+define( 'FLEXSLIDER', false ); // default: false
+define( 'YVFADER', false ); // default: false
+define( 'WOOCOMMERCE', false ); // default: false
 
 /****************************************
 EXTRA FRONTEND FUNCTIONS

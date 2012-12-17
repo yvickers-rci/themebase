@@ -47,17 +47,10 @@ $link-hover: darken($link-color, 25%);
 
 /* -- Global
 ======================================================================*/
-body {
-	font:#{$default-font-size}px/#{$default-line-height}em $font-arial;
-}
+body { font:#{$default-font-size}px/#{$default-line-height}em $font-arial; }
 
 /* -- Chrome Frame prompt -- */
-.chromeframe {
-	color:#000;
-	background:#ccc;
-	padding:0.2em 0;
-	margin:0.2em 0;
-}
+.chromeframe { color:#000; background:#ccc; padding:0.2em 0; margin:0.2em 0; }
 
 /* -- Selections -- */
 ::-moz-selection, ::selection {
@@ -92,38 +85,22 @@ a, a:visited {
 }
 
 /* -- File Types -- */
-.pdf,
-.doc,
-.xls,
-.ppt {
-	background-position:0 0;
-	background-repeat:no-repeat;
-	padding-left:21px;
-	margin-left:2px;
+$doc-types: ("pdf", "doc", "xls", "ppt");
+@each $type in $doc-types {
+	.#{$type} { background:url(assets/images/icons/icon-#{$type}.png) 0 0 no-repeat; padding-left:21px; margin-left:2px; }
 }
-.pdf { background-image:url(assets/images/icons/icon-pdf.png) }
-.doc { background-image:url(assets/images/icons/icon-doc.png) }
-.xls { background-image:url(assets/images/icons/icon-xls.png) }
-.ppt { background-image:url(assets/images/icons/icon-ppt.png) }
 
 /* -- RCI Contact Info -- */
 .rci-contact {
-	float:right;
-	width:100%;
+	float:right; width:100%;
 
-	h2 {
-		padding-bottom:5px;
-	}
+	h2 { padding-bottom:5px; }
 
-	p {
-		padding:0;
-	}
+	p { padding:0; }
 }
 
 .inner-contact-info {
-	span {
-		display:block;
-	}
+	span { display:block; }
 }
 
 /* -- Base styles
@@ -137,11 +114,7 @@ textarea { resize:vertical }
 
 /* -- Wrappers
 ======================================================================*/
-#content,
-.wrap {
-	width:$main-width;
-	margin:0 auto;
-}
+#content, .wrap { width:$main-width; margin:0 auto; }
 
 // -- Buttons
 // ======================================================================
@@ -194,124 +167,76 @@ textarea { resize:vertical }
 
 /* -- Header
 ======================================================================*/
-header {
-	width:$main-width;
-	height:100px;
-	margin:0 auto;
-}
+header { width:$main-width; height:100px; margin:0 auto; }
 
 // Logo
-.logo {
-	float:left;
-}
+.logo { float:left; }
 
 // Header Navigation
-.nav-header {
-	@include navfix;
-}
+.nav-header { @include navfix; }
 
 /* -- Image Slider
 ======================================================================*/
 /* -- Slider -- */
-.rci-slider {
-	overflow:auto;
-	position:relative;
-}
+.rci-slider { overflow:auto; position:relative; }
 
 .rci-slide-container {
 	overflow:hidden;
 
-	.js-enabled & {
-		position:relative;
-	}
+	.js-enabled & { position:relative; }
 }
 
 .rci-slider-viewport {
-	clear:both;
-	overflow:auto;
+	clear:both; overflow:auto;
 
-	.js-enabled & {
-		overflow:hidden;
-		position:relative;
-	}
+	.js-enabled & { overflow:hidden; position:relative; }
 }
 
 .rci-slide {
 	float:left;
 
-	.js-enabled & {
-		position:absolute;
-	}
+	.js-enabled & { position:absolute; }
 }
 
 // -- Slider Controls
 // ======================================================================
-.prev_next_play {
-	float:left;
-}
+.prev_next_play { float:left; }
 
 .rci-slider-previous,
 .rci-slider-next,
 .rci-slider-play {
 	display:none;
 
-	.js-enabled & {
-		display:inline;
-	}
+	.js-enabled & { display:inline; }
 }
 
-.playing {
-	color:#fff;
-	background:#000;
-}
+.playing { color:#fff; background:#000; }
 
 // -- Slider Numbers
 // ======================================================================
 .rci-slider-navigation {
-	@include navfix;
-	clear:both;
+	@include navfix; clear:both;
 
-	.current {
-		color:#fff;
-		background:#000;
-	}
+	.current { color:#fff; background:#000; }
 }
 
 .rci-slider-viewport,
 .js-enabled .rci-slider-viewport,
 .js-enabled .rci-slide-container,
-.rci-slide {
-	width:$main-width;
-	height:450;
-}
-.rci-slider-viewport {
-	height:450px + 17;
-}
-.rci-slide-container {
-	width:10000px;
-}
+.rci-slide { width:$main-width; height:450; }
+
+.rci-slider-viewport { height:450px + 17; }
+
+.rci-slide-container { width:10000px; }
 
 /* -- Social
 ======================================================================*/
 .social {
-	&, span, a {
-		float:right;
-		overflow:hidden;
-		height:16px;
-		line-height:18px;
-	}
+	&, span, a { float:right; overflow:hidden; height:16px; line-height:18px; }
 
-	a {
-		float:left;
-		display:inline;
-		height:16px;
-		background:url(assets/images/icons/social-media-set-one.png) no-repeat;
-		padding:0 0 0 16px;
-		margin:0 2px;
+	a { float:left; display:inline; height:16px; background:url(assets/images/icons/social-media-set-one.png) no-repeat; padding:0 0 0 16px; margin:0 2px;
 
-		&:hover {
-			text-decoration:none;
-		}
+		&:hover { text-decoration:none; }
 
 		&.facebook 	{ background-position:0 0 }
 		&.twitter 	{ background-position:0 -32px }
@@ -321,17 +246,10 @@ header {
 	}
 
 	&.labels {
-		a {
-			padding:0 0 0 20px;
-			margin:0 5px;
-		}
+		a { padding:0 0 0 20px; margin:0 5px; }
 	}
 
-	.pre-text,
-	.post-text {
-		float:left;
-		padding:0 5px;
-	}
+	.pre-text, .post-text { float:left; padding:0 5px; }
 }
 
 /* -- Content (bundled)
@@ -343,46 +261,23 @@ header {
 /* -- Content (internal)
 ======================================================================*/
 /* -- Side Navigation -- */
-.nav-side {
-	position:relative;
-	width:223px;
-	border:1px solid $black;
-	font-size:13px;
-	line-height:normal;
-	padding:25px 0;
-	margin:0 0 20px;
+.nav-side { position:relative; width:223px; border:1px solid $black; font-size:13px; line-height:normal; padding:25px 0; margin:0 0 20px;
+
+	b, b a { display:block; color:$black; padding:0 21px; }
 	
-	b,
-	b a {
-		display:block;
-		color:$black;
-		padding:0 21px
-	}
+	b a { padding:0; }
 	
-	b a {
-		padding:0;
-	}
+	ul { padding:0 21px; }
 	
-	ul {
-		padding:0 21px;
-	}
-	
-	li {
-		list-style:none;
-		padding:11px 0 0;
-	}
+	li { list-style:none; padding:11px 0 0; }
 	
 	.children {
-		display:none;
-		padding:0 0 0 11px;
+		display:none; padding:0 0 0 11px;
 		
 		li {
-			font-size:12px;
-			padding:6px 0 0;
+			font-size:12px; padding:6px 0 0;
 			
-			a {
-				color:$red;
-			}
+			a { color:$red; }
 		}
 	}
 	
@@ -416,12 +311,7 @@ header {
 
 /* -- Footer
 ======================================================================*/
-footer {
-	clear:both;
-	width:$main-width;
-	height:100px;
-	margin:0 auto;
-}
+footer { clear:both; width:$main-width; height:100px; margin:0 auto; }
 
 /* -- Footer Navigation -- */
 .nav-footer { @include navfix }

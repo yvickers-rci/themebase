@@ -5,10 +5,14 @@ Author: 		Red Clay Interactive
 Author URI: 	www.redclayinteractive.com
 Version: 		1.0
 */
+/* -- Fonts
+======================================================================*/
 * { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
-/* - HTML5 display definitions
-=========================================================================*/
+/* -- Normalize styles
+======================================================================*/
+/* -- HTML5 display definitions
+======================================================================*/
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary { display: block; }
 
 audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
@@ -17,22 +21,22 @@ audio:not([controls]) { display: none; height: 0; }
 
 [hidden] { display: none; }
 
-/* - Base
-=========================================================================*/
+/* -- Base
+======================================================================*/
 html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 
 html, button, input, select, textarea { font-family: sans-serif; }
 
 body { margin: 0; }
 
-/* - Links
-=========================================================================*/
+/* -- Links
+======================================================================*/
 a:focus { outline: thin dotted; }
 
 a:active, a:hover { outline: 0; }
 
-/* - Typography
-=========================================================================*/
+/* -- Typography
+======================================================================*/
 h1 { font-size: 2em; margin: 0.67em 0; }
 
 h2 { font-size: 1.5em; margin: 0.83em 0; }
@@ -71,8 +75,8 @@ sup { top: -0.5em; }
 
 sub { bottom: -0.25em; }
 
-/* - Lists
-=========================================================================*/
+/* -- Lists
+======================================================================*/
 dl, menu, ol, ul { margin: 1em 0; }
 
 dd { margin: 0 0 0 40px; }
@@ -81,18 +85,18 @@ menu, ol, ul { padding: 0 0 0 40px; }
 
 nav ul, nav ol { list-style: none; list-style-image: none; }
 
-/* - Embedded content
-=========================================================================*/
+/* -- Embedded content
+======================================================================*/
 img { border: 0; -ms-interpolation-mode: bicubic; }
 
 svg:not(:root) { overflow: hidden; }
 
-/* - Figures
-=========================================================================*/
+/* -- Figures
+======================================================================*/
 figure { margin: 0; }
 
-/* - Forms
-=========================================================================*/
+/* -- Forms
+======================================================================*/
 form { margin: 0; }
 
 fieldset { border: 1px solid #c0c0c0; margin: 0 2px; padding: 0.35em 0.625em 0.75em; }
@@ -117,12 +121,12 @@ button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
 
 textarea { overflow: auto; vertical-align: top; }
 
-/* - Tables
-=========================================================================*/
+/* -- Tables
+======================================================================*/
 table { border-collapse: collapse; border-spacing: 0; }
 
-/* - Global
-=========================================================================*/
+/* -- Global
+======================================================================*/
 body { font: 14px/1.5em Arial, Helvetica, sans-serif; }
 
 /* -- Chrome Frame prompt -- */
@@ -137,15 +141,13 @@ a:hover, a:focus, a:visited:hover, a:visited:focus { color: maroon; -webkit-tran
 a:link, a:visited:link { -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3); }
 
 /* -- File Types -- */
-.pdf, .doc, .xls, .ppt { background-position: 0 0; background-repeat: no-repeat; padding-left: 21px; margin-left: 2px; }
+.pdf { background: url(assets/images/icons/icon-pdf.png) 0 0 no-repeat; padding-left: 21px; margin-left: 2px; }
 
-.pdf { background-image: url(assets/images/icons/icon-pdf.png); }
+.doc { background: url(assets/images/icons/icon-doc.png) 0 0 no-repeat; padding-left: 21px; margin-left: 2px; }
 
-.doc { background-image: url(assets/images/icons/icon-doc.png); }
+.xls { background: url(assets/images/icons/icon-xls.png) 0 0 no-repeat; padding-left: 21px; margin-left: 2px; }
 
-.xls { background-image: url(assets/images/icons/icon-xls.png); }
-
-.ppt { background-image: url(assets/images/icons/icon-ppt.png); }
+.ppt { background: url(assets/images/icons/icon-ppt.png) 0 0 no-repeat; padding-left: 21px; margin-left: 2px; }
 
 /* -- RCI Contact Info -- */
 .rci-contact { float: right; width: 100%; }
@@ -154,8 +156,8 @@ a:link, a:visited:link { -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3); }
 
 .inner-contact-info span { display: block; }
 
-/* - Base styles
-=========================================================================*/
+/* -- Base styles
+======================================================================*/
 html, button, input, select, textarea { color: #222; }
 
 hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
@@ -166,8 +168,8 @@ fieldset { border: 0; margin: 0; padding: 0; }
 
 textarea { resize: vertical; }
 
-/* - Wrappers
-=========================================================================*/
+/* -- Wrappers
+======================================================================*/
 #content, .wrap { width: 980px; margin: 0 auto; }
 
 .button, .button:visited { font-family: Arial, Helvetica, sans-serif; border: 1px solid #bd0000; border-top-color: #db0000; border-left-color: #db0000; padding: 4px 12px; color: white; display: inline-block; font-size: 11px; font-weight: bold; text-decoration: none; text-shadow: 0 1px rgba(0, 0, 0, 0.75); cursor: pointer; margin-bottom: 20px; line-height: 21px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -ms-border-radius: 4px; -o-border-radius: 4px; -border-radius: 4px; border-radius: 4px; background-color: #e60000; background-image: -webkit-gradient(linear, left top, left bottom, from(red), to(#e60000)); background-image: -webkit-linear-gradient(top, red, #e60000); background-image: -moz-linear-gradient(top, red, #e60000); background-image: -ms-linear-gradient(top, red 0%, #e60000 100%); background-image: -o-linear-gradient(top, red, #e60000); background-image: linear-gradient(to bottom, #ff0000, #e60000); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='red', endColorstr='#e60000',GradientType=0 ); }
@@ -178,16 +180,16 @@ textarea { resize: vertical; }
 .blue-button:hover, .blue-button:focus, .blue-button:visited:hover, .blue-button:visited:focus { border-color: #116396; background-color: #1472ad; background-image: -webkit-gradient(linear, left top, left bottom, from(#1784c9), to(#1472ad)); background-image: -webkit-linear-gradient(top, #1784c9, #1472ad); background-image: -moz-linear-gradient(top, #1784c9, #1472ad); background-image: -ms-linear-gradient(top, #1784c9 0%, #1472ad 100%); background-image: -o-linear-gradient(top, #1784c9, #1472ad); background-image: linear-gradient(to bottom, #1784c9, #1472ad); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1784c9', endColorstr='#1472ad',GradientType=0 ); }
 .blue-button:active, .blue-button:visited:active { background-color: #1990db; background-image: -webkit-gradient(linear, left top, left bottom, from(#1681c4), to(#1990db)); background-image: -webkit-linear-gradient(top, #1681c4, #1990db); background-image: -moz-linear-gradient(top, #1681c4, #1990db); background-image: -ms-linear-gradient(top, #1681c4 0%, #1990db 100%); background-image: -o-linear-gradient(top, #1681c4, #1990db); background-image: linear-gradient(to bottom, #1681c4, #1990db); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1681c4', endColorstr='#1990db',GradientType=0 ); }
 
-/* - Header
-=========================================================================*/
+/* -- Header
+======================================================================*/
 header { width: 980px; height: 100px; margin: 0 auto; }
 
 .logo { float: left; }
 
 .nav-header, .nav-header ul, .nav-header li, .nav-header a { position: relative; float: left; list-style: none; padding: 0; margin: 0; }
 
-/* - Image Slider
-=========================================================================*/
+/* -- Image Slider
+======================================================================*/
 /* -- Slider -- */
 .rci-slider { overflow: auto; position: relative; }
 
@@ -217,8 +219,8 @@ header { width: 980px; height: 100px; margin: 0 auto; }
 
 .rci-slide-container { width: 10000px; }
 
-/* - Social
-=========================================================================*/
+/* -- Social
+======================================================================*/
 .social, .social span, .social a { float: right; overflow: hidden; height: 16px; line-height: 18px; }
 .social a { float: left; display: inline; height: 16px; background: url(assets/images/icons/social-media-set-one.png) no-repeat; padding: 0 0 0 16px; margin: 0 2px; }
 .social a:hover { text-decoration: none; }
@@ -230,12 +232,12 @@ header { width: 980px; height: 100px; margin: 0 auto; }
 .social.labels a { padding: 0 0 0 20px; margin: 0 5px; }
 .social .pre-text, .social .post-text { float: left; padding: 0 5px; }
 
-/* - Content (bundled)
-=========================================================================*/
-/* - Content (homepage)
-=========================================================================*/
-/* - Content (internal)
-=========================================================================*/
+/* -- Content (bundled)
+======================================================================*/
+/* -- Content (homepage)
+======================================================================*/
+/* -- Content (internal)
+======================================================================*/
 /* -- Side Navigation -- */
 .nav-side { position: relative; width: 223px; border: 1px solid black; font-size: 13px; line-height: normal; padding: 25px 0; margin: 0 0 20px; }
 .nav-side b, .nav-side b a { display: block; color: black; padding: 0 21px; }
@@ -248,8 +250,8 @@ header { width: 980px; height: 100px; margin: 0 auto; }
 .nav-side .children li a:hover, .nav-side li.current-cat > a, .nav-side li.current-cat-parent > a, .nav-side li.current > a, .nav-side li.current_page_parent > a { color: #1990db; }
 .nav-side li.current-cat .children, .nav-side li.current-cat-parent .children, .nav-side li.current .children, .nav-side li.current-parent .children { display: block; }
 
-/* - Gravity Forms
-=========================================================================*/
+/* -- Gravity Forms
+======================================================================*/
 .gform_wrapper .gfield { padding: 10px 0; margin: 0; }
 .gform_wrapper .gfield.hidden { display: none; }
 .gform_wrapper .gfield .gfield_description { padding: 0; }
@@ -264,39 +266,39 @@ header { width: 980px; height: 100px; margin: 0 auto; }
 .gform_wrapper div.validation_error, .gform_wrapper span.gfield_required, .gform_wrapper .gfield.gfield_error .gfield_description.validation_message, .gform_wrapper .gfield .validation_message { color: #c2323c; }
 .gform_wrapper .gfield.gfield_error input:focus, .gform_wrapper .gfield.gfield_error textarea:focus { border: 1px solid #c2323c; }
 
-/* - Page Numbers (wp-page-numbers plugin)
-=========================================================================*/
+/* -- Page Numbers (wp-page-numbers plugin)
+======================================================================*/
 #wp_page_numbers { clear: both; width: 100%; }
 #wp_page_numbers, #wp_page_numbers ul, #wp_page_numbers li, #wp_page_numbers a { position: relative; float: left; list-style: none; padding: 0; margin: 0; }
 #wp_page_numbers ul { float: right; }
 #wp_page_numbers li, #wp_page_numbers a { padding: 0 2px; }
 
-/* - WordPress Specific (borrowed from twentyeleven theme)
-=========================================================================*/
+/* -- WordPress Specific (borrowed from twentyeleven theme)
+======================================================================*/
 /* -- Images -- */
 img[class*="align"], img[class*="wp-image-"], img[class*="attachment-"] { height: auto; }
 
 img.size-full, img.size-large { width: auto; height: auto; }
 
-/* aligning */
+/* -- Aligning -- */
 img.alignleft, img.alignright, img.aligncenter { margin-bottom: 10px; }
 img.alignleft { display: inline; float: left; margin-right: 10px; }
 img.alignright { display: inline; float: right; margin-left: 10px; }
 img.aligncenter { clear: both; display: block; margin-left: auto; margin-right: auto; }
 
-/* captions */
+/* -- Captions -- */
 .wp-caption { max-width: 96%; background: #eee; padding: 9px; margin-top: 0.4em; margin-bottom: 1.625em; }
 .wp-caption img { display: block; max-width: 98%; border-color: #eee; margin: 0 auto; }
 a:focus .wp-caption img, a:active .wp-caption img, a:hover .wp-caption img { background: #fff; border-color: #ddd; }
 .wp-caption .wp-caption-text { position: relative; font-family: Georgia, Cambria, "Times New Roman", Times, serif; font-size: 12px; color: #555; padding: 10px 0 5px 40px; margin-bottom: 0.6em; }
 .wp-caption .wp-caption-text:before { position: absolute; left: 10px; top: 7px; content: '\2014'; font: normal 14px bold Georgia, Cambria, "Times New Roman", Times, serif; color: #555; margin-right: 5px; }
 
-/* borders */
+/* -- Borders -- */
 img[class*="align"], img[class*="wp-image-"] { border: 1px solid #ddd; padding: 6px; }
 a:focus img[class*="align"], a:hover img[class*="align"], a:active img[class*="align"], a:focus img[class*="wp-image-"], a:hover img[class*="wp-image-"], a:active img[class*="wp-image-"] { background: #eee; border-color: #bbb; }
 
-/* - Footer
-=========================================================================*/
+/* -- Footer
+======================================================================*/
 footer { clear: both; width: 980px; height: 100px; margin: 0 auto; }
 
 /* -- Footer Navigation -- */
@@ -308,17 +310,18 @@ footer { clear: both; width: 980px; height: 100px; margin: 0 auto; }
 /* -- Agency Info -- */
 .redclay { float: right; }
 
-/* - Responsive (borrowed from Bones (http://themble.com/bones/) )
-=========================================================================*/
-/* - Helper classes
-=========================================================================*/
+/* -- Responsive (borrowed from Bones (http://themble.com/bones/) )
+======================================================================*/
+/* -- Helper classes
+======================================================================*/
 .clearfix:before, .clearfix:after { content: " "; display: table; }
 
 .clearfix:after { clear: both; }
 
 .clearfix { *zoom: 1; }
 
-@media print { * { background: transparent !important; color: black !important; text-shadow: none !important; filter: none !important; -ms-filter: none !important; }
+@media print { /* -- Print styles ======================================================================*/
+  * { background: transparent !important; color: black !important; text-shadow: none !important; filter: none !important; -ms-filter: none !important; }
   a, a:visited { color: #444 !important; text-decoration: underline; }
   a:after, a:visited:after { content: " (" attr(href) ")"; }
   a abbr[title]:after, a:visited abbr[title]:after { content: " (" attr(title) ")"; }

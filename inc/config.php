@@ -3,6 +3,9 @@
 THEME SUPPORT
 ****************************************/
 function themebase_theme_support() {
+	// remove admin menu bar
+	add_filter( 'show_admin_bar', '__return_false' );
+	
 	// wp thumbnails (sizes handled in functions.php)
 	add_theme_support( 'post-thumbnails' );
 
@@ -44,7 +47,9 @@ function themebase_scripts_and_styles() {
 	// jQuery [header]
 	if( !is_admin() ) {
 		wp_deregister_script( 'jquery' );
-		wp_enqueue_script( 'jquery', "$protocol//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js", array(), '1.8.2', false );
+		$jquery_version = ( JQUERY_VERSION ) ? JQUERY_VERSION : '1.8.3';
+		$jquery_location = ( LOCAL_JQUERY === true ) ? get_template_directory_uri() . "/assets/js/jquery-$jquery_version.min.js" : "$protocol//ajax.googleapis.com/ajax/libs/jquery/$jquery_version/jquery.min.js";
+		wp_enqueue_script( 'jquery', $jquery_location, array(), '1.8.3', false );
 	}
 	
 	// Modernizr [header]
@@ -63,9 +68,21 @@ function themebase_scripts_and_styles() {
 	// Stylesheet [header]
 	wp_enqueue_style( 'style', get_stylesheet_uri(), false, null );
 
-	wp_register_script( 'plugins', get_template_directory_uri() . '/assets/js/plugins.js', false, null, false );
+	wp_register_script( 'plugins', get_template_directory_uri() . '/assets/js/plugins.js', false, null, true );
 	wp_enqueue_script( 'plugins' );
 }
+
+
+/****************************************
+THUMBNAIL SIZE OPTIONS
+****************************************/
+function remove_dashboard_widgets() {
+	remove_meta_box( 'dashboard_incoming_links', 'dashboard', 'normal' );
+	remove_meta_box( 'dashboard_plugins', 'dashboard', 'normal' );
+	remove_meta_box( 'dashboard_primary', 'dashboard', 'normal' );
+	remove_meta_box( 'dashboard_secondary', 'dashboard', 'normal' );
+}
+add_action( 'admin_init', 'remove_dashboard_widgets' );
 
 
 /****************************************

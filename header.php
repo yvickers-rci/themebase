@@ -16,23 +16,20 @@
 <meta property="og:title" content="<?php wp_title( '|', true, 'right' ); ?>">
 <meta property="og:site_name" content="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
 
+<?php if( file_exists( ABSPATH . '/humans.txt' ) ) : ?>
 <link type="text/plain" rel="author" href="<?php bloginfo( 'url' ); ?>/humans.txt">
-
-<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
-
+<?php endif; ?>
+<?php if( file_exists( ABSPATH . '/favicon.ico' ) ) : ?>
+<link rel="shortcut icon" href="<?php echo bloginfo( 'url' ); ?>/favicon.ico">
+<?php endif; ?>
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="<?php echo get_template_directory_uri(); ?>/assets/js/jquery-1.8.2.min.js"><\/script>')</script>
 
 <?php wp_head(); ?>
 
 </head>
 
 <body <?php body_class(); ?>>
-	<!--[if lte IE 7]>
-		<p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
-	<![endif]-->
+	<!--[if lte IE 7]><p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p><![endif]-->
 
 <?php
 	// Use Bootstrap's navbar if enabled in config.php
