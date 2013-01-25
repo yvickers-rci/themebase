@@ -15,11 +15,12 @@
 
 /* THANKS */
 
-	WordPress for being great >> http://wordpress.org/
-	HTML5 Boilerplate >> http://html5boilerplate.com/
-	CSS3 Pie >> http://css3pie.com/
-	Bones Theme >> http://themble.com/bones/
-	Red Clay Interactive >> http://www.redclayinteractive.com/
+	WordPress [[ http://wordpress.org/ ]]
+	Themebase [[ https://github.com/zachthezman/themebase ]]
+	HTML5 Boilerplate [[ http://html5boilerplate.com/ ]]
+	CSS3 Pie [[ http://css3pie.com/ ]]
+	Bones Theme [[ http://themble.com/bones/ ]]
+	Red Clay Interactive [[ http://www.redclayinteractive.com/ ]]
 
 /* SITE */
 
