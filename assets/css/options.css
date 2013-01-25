@@ -1,0 +1,75 @@
+/* on */
+body.toplevel_page_options-framework #wpadminbar ul #wp-admin-bar-website_options {
+	background: #8A9B0F; /* Old browsers */
+	background: -moz-linear-gradient(top,  #8A9B0F 0%, #6C7B0C 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#8A9B0F), color-stop(100%,#6C7B0C)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #8A9B0F 0%,#6C7B0C 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #8A9B0F 0%,#6C7B0C 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #8A9B0F 0%,#6C7B0C 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #8A9B0F 0%,#6C7B0C 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8A9B0F', endColorstr='#6C7B0C',GradientType=0 ); /* IE6-9 */
+}
+
+body.toplevel_page_options-framework #wpadminbar ul #wp-admin-bar-website_options a { text-shadow:0 -1px #333; background:none; }
+
+/* off */
+#wpadminbar ul #wp-admin-bar-website_options,
+#wpadminbar ul #wp-admin-bar-website_options:hover .ab-item,
+#wpadminbar ul #wp-admin-bar-website_options:focus .ab-item { background:#8A9B0F; }
+#wpadminbar ul #wp-admin-bar-website_options a { font-weight:bold; color:#fff; text-shadow:none; background:#8A9B0F; }
+
+
+/* sidebar */
+#wpadminbar ul #wp-admin-bar-website_options {
+	background: #8A9B0F; /* Old browsers */
+	background: -moz-linear-gradient(top,  #8A9B0F 0%, #6C7B0C 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#8A9B0F), color-stop(100%,#6C7B0C)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #8A9B0F 0%,#6C7B0C 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #8A9B0F 0%,#6C7B0C 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #8A9B0F 0%,#6C7B0C 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #8A9B0F 0%,#6C7B0C 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8A9B0F', endColorstr='#6C7B0C',GradientType=0 ); /* IE6-9 */
+}
+
+#wpadminbar ul #wp-admin-bar-website_options:hover .ab-item, #wpadminbar ul #wp-admin-bar-website_options:focus .ab-item { background: #8A9B0F; }
+
+#wpadminbar ul #wp-admin-bar-website_options a { color:#fff }
+
+#adminmenu #toplevel_page_options-framework.current a.menu-top,
+.folded #adminmenu #toplevel_page_options-framework.current.menu-top,
+#adminmenu #toplevel_page_options-framework.current .wp-menu-arrow {
+	background: #8A9B0F; /* Old browsers */
+	background: -moz-linear-gradient(top,  #8A9B0F 0%, #6C7B0C 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#8A9B0F), color-stop(100%,#6C7B0C)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #8A9B0F 0%,#6C7B0C 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #8A9B0F 0%,#6C7B0C 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #8A9B0F 0%,#6C7B0C 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #8A9B0F 0%,#6C7B0C 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8A9B0F', endColorstr='#6C7B0C',GradientType=0 ); /* IE6-9 */
+	
+	border-top-color:#8A9B0F;
+	border-bottom-color:#6C7B0C;
+}
+
+#adminmenu #toplevel_page_options-framework .wp-menu-arrow div {
+	background: #8A9B0F; /* Old browsers */
+	background: -moz-linear-gradient(-45deg,  #8A9B0F 0%, #6C7B0C 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#8A9B0F), color-stop(100%,#6C7B0C)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(-45deg,  #8A9B0F 0%,#6C7B0C 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(-45deg,  #8A9B0F 0%,#6C7B0C 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(-45deg,  #8A9B0F 0%,#6C7B0C 100%); /* IE10+ */
+	background: linear-gradient(135deg,  #8A9B0F 0%,#6C7B0C 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8A9B0F', endColorstr='#6C7B0C',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+#adminmenu #toplevel_page_options-framework a.menu-top,
+.folded #adminmenu #toplevel_page_options-framework.menu-top,
+#adminmenu #toplevel_page_options-framework .wp-menu-arrow {
+	color:#fff;
+	background: #6C7B0C; /* Old browsers */
+	
+	border-top-color:#6C7B0C;
+	border-bottom-color:#6C7B0C;
+}
+
+#adminmenu #toplevel_page_options-framework a.wp-not-current-submenu:hover { text-shadow:none }
