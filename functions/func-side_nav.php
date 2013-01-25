@@ -26,8 +26,9 @@ function side_nav( $specific_ID = '', $which_side = '' ) {
 		// primary side nav item
 		// allows for a custom field to be used
 		// to override the nav title - 'page_section_title'
-		$specific_ID_title = get_post_meta( $specific_ID, 'page_section_title', true ) ? get_post_meta( $specific_ID, 'page_section_title', true ) : get_the_title( $specific_ID );
-		$section_title = ( is_single() ) ? $specific_ID_title : get_post_meta( $first_parent->ID, 'page_section_title', true );
+		$custom = ( $specific_ID ) ? get_post_custom( $specific_ID ) : get_post_custom( $first_parent->ID );
+		$specific_ID_title = ( $custom['alt_nav_title'][0] ) ? $custom['alt_nav_title'][0] : get_the_title( $specific_ID );
+		$section_title = ( $specific_ID_title ) ? $specific_ID_title : $custom['alt_nav_title'][0];
 		$section_title = ( $section_title ) ? $section_title : get_the_title( $first_parent->ID );
 		
 		$nav_output .= ( $specific_ID ) ? '<b><a href="' . get_permalink( $specific_ID ) . '">' . $section_title . '</a></b>'."\n" : '<b><a href="' . get_permalink( $first_parent->ID ) . '">' . $section_title . '</a></b>'."\n";
@@ -57,8 +58,11 @@ function side_nav( $specific_ID = '', $which_side = '' ) {
 					$current_nav_output = '';
 				endif;
 	
+				$custom = get_post_custom( $nav_item->ID );
+
 				// start 1st level list item
-				$nav_output .= '<li' . $current_nav_output . '><a href="' . get_permalink( $nav_item->ID ) . '">' . $nav_item->post_title . '</a>';
+				$nav_title = ( ! empty( $custom['alt_nav_title'][0] ) ) ? $custom['alt_nav_title'][0] : $nav_item->post_title;
+				$nav_output .= '<li' . $current_nav_output . '><a href="' . get_permalink( $nav_item->ID ) . '" title="' . $nav_title . '">' . $nav_title . '</a>';
 				
 				// 2nd level array
 				$child_check = get_posts( array( 'post_type' => 'page', 'numberposts' => -1, 'post_parent' => $nav_item->ID, 'orderby' => 'menu_order', 'order' => ASC ) );
