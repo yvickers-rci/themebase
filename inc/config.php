@@ -203,7 +203,7 @@ function bootstrap_styles() {
 MISCELLANEOUS
 ****************************************/
 // http://wordpress.stackexchange.com/questions/15850/remove-classes-from-body-class
-function themebases_body_class( $wp_classes, $extra_classes ) {
+function themebase_body_class( $wp_classes, $extra_classes ) {
     // List of the only WP generated classes allowed
     $whitelist = array( 'home', 'page', 'blog', 'archive', 'single', 'category', 'tag', 'error404', 'logged-in', 'admin-bar' );
 
