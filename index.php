@@ -1,3 +1,10 @@
+<?php
+/**
+ * ATTENTION: DO NOT MODIFY THIS FILE.  Define a client directory in your settings file,
+ * then create /client_folder/templates/index.php for custom template
+ */
+if(tb_template_file('index.php')) return;
+?>
 <?php get_header(); ?>
 
 	<div id="content" role="main">

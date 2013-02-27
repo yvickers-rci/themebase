@@ -1,4 +1,11 @@
 <?php
+/**
+ * ATTENTION: DO NOT MODIFY THIS FILE.  Define a client directory in your settings file,
+ * then create /client_folder/templates/comments.php for custom template
+ */
+if(tb_template_file('comments.php')) return;
+?>
+<?php
 /*
 The comments page for Themebase
 */

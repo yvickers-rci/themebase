@@ -1,3 +1,10 @@
+<?php
+/**
+ * ATTENTION: DO NOT MODIFY THIS FILE.  Define a client directory in your settings file,
+ * then create /client_folder/templates/header.php for custom template
+ */
+if(tb_template_file('header.php')) return;
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" <?php language_attributes(); ?>> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" <?php language_attributes(); ?>> <![endif]-->
