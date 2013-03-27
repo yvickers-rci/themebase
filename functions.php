@@ -64,7 +64,7 @@ function tb_include_file($file){
  * function to provide access to themebase settings no matter where you are
  * this will handle scoping for you, if you don't know how to
  */
-function tb_setting($setting){
+function tb_get_setting($setting){
 	global $themebase_settings;
 	return isset($themebase_settings[$setting])? $themebase_settings[$setting]:false;
 }
@@ -73,7 +73,8 @@ function tb_setting($setting){
  * checks for client specific template file to use in place of themebase template
  */
 function tb_template_file($template){
-    $file = TEMPLATEPATH.'/'.tb_setting('client_directory').'/templates/'.$template;
+    global $themebase_settings;
+    $file = TEMPLATEPATH.'/'.$themebase_settings['core_directory'].'/templates/'.$template;
 
 	if(!is_file($file)){
 		return false;

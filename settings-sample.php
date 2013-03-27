@@ -5,4 +5,9 @@ $themebase_settings = array(
     'typekit_id'=>'',
 	'addthis_id'=>'',
 	'ga_id'=>'',
+
+    'image_sizes'=>array(
+		array('thumb-800x600', 800, 600, true),
+		array('thumb-480x320', 480, 320, true),
+	),
 );

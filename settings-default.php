@@ -6,6 +6,7 @@ $themebase_defaults = array(
 	'framework_builtin'=>false,
 	'framework_menu_title'=>'',
 
+	'meta_title_filter'=>true,          //add blog name and separator to meta title, usually set to false when an seo plugin is added
 	'local_jquery'=>false,
 	'jquery_version'=>1.8,
 
@@ -17,6 +18,8 @@ $themebase_defaults = array(
 	'yvfader'=>false,
 
 	'woocommerce'=>false,
+
+	'image_sizes'=>array(),
 
     /**
 	 * Theme Base

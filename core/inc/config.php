@@ -34,9 +34,10 @@ function themebase_theme_support() {
 /****************************************
 THUMBNAIL SIZE OPTIONS
 ****************************************/
-// Thumbnail sizes
-add_image_size( 'thumb-800x600', 800, 600, true );
-add_image_size( 'thumb-480x320', 480, 320, true );
+$image_sizes = tb_get_setting('image_sizes');
+foreach($image_sizes as $size){
+	call_user_func_array('add_image_size',$size);
+}
 
 
 /****************************************

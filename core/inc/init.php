@@ -7,6 +7,7 @@ WORDPRESS CLEANUP
 add_action( 'after_setup_theme','themebase_cleanup', 15 );
 
 function themebase_cleanup() {
+	global $themebase_settings;
 	// launching operation cleanup
 	add_action( 'init', 'themebase_head_cleanup' );
 	// remove WP version from RSS
@@ -32,7 +33,9 @@ function themebase_cleanup() {
 	add_filter( 'excerpt_more', 'themebase_excerpt_more' );
 	
 	// nice, neat, well-formed page titles
-	add_filter( 'wp_title', 'themebase_wp_title', 10, 2 );
+	if($themebase_settings['meta_title_filter']){
+		add_filter( 'wp_title', 'themebase_wp_title', 10, 2 );
+	}
 
 	// add and remove body_class() classes ( config.php )
 	add_filter( 'body_class', 'themebase_body_class', 10, 2 );
