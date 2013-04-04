@@ -10,4 +10,9 @@ $themebase_settings = array(
 		array('thumb-800x600', 800, 600, true),
 		array('thumb-480x320', 480, 320, true),
 	),
+
+    'nav_menus'=>array(
+		'header' => __('Main Menu'),
+		'footer' => __('Footer Menu'),
+	),
 );

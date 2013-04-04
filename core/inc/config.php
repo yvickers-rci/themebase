@@ -19,12 +19,10 @@ function themebase_theme_support() {
 	add_theme_support( 'menus' );
 
 	// registering wp3+ menus
-	register_nav_menus(
-		array(
-			'header' 	=> __( 'Main Menu' ),
-			'footer' 	=> __( 'Footer Menu' ),
-		)
-	);
+	$nav_menus = tb_get_setting('nav_menus');
+	if(count($nav_menus) !== 0){
+		register_nav_menus($nav_menus);
+	}
 
 	// Enable relative URLs
 	add_theme_support( 'root-relative-urls' );
@@ -194,10 +192,14 @@ BOOTSTRAP
 // Prep the bootstrap for use
 function bootstrap_styles() {
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.css', false, null );
-	//wp_enqueue_style( 'bootstrap_responsive', get_template_directory_uri() . '/assets/css/bootstrap-responsive.css', array( 'bootstrap' ), null );
+	if(tb_get_setting('boostrap_styles_responsive')){
+		wp_enqueue_style( 'bootstrap_responsive', get_template_directory_uri() . '/assets/css/bootstrap-responsive.css', array( 'bootstrap' ), null );
+	}
 }
 // Uncomment the following line to use the bootstrap stylesheets
-//add_action( 'wp_enqueue_scripts', 'bootstrap_styles', 1 );
+if(tb_get_setting('bootstrap_styles')){
+	add_action( 'wp_enqueue_scripts', 'bootstrap_styles', 1 );
+}
 
 
 /****************************************
@@ -206,16 +208,16 @@ MISCELLANEOUS
 // http://wordpress.stackexchange.com/questions/15850/remove-classes-from-body-class
 function themebase_body_class( $wp_classes, $extra_classes ) {
     // List of the only WP generated classes allowed
-    $whitelist = array( 'home', 'page', 'blog', 'archive', 'single', 'category', 'tag', 'error404', 'logged-in', 'admin-bar' );
+    $whitelist = tb_get_setting('body_class_white_list');
 
     // List of the only WP generated classes that are not allowed
-    $blacklist = array( 'home', 'blog', 'archive', 'single', 'category', 'tag', 'error404', 'logged-in', 'admin-bar' );
+    $blacklist = tb_get_setting('body_class_black_list');
 
     // Filter the body classes
     // Whitelist result: (comment if you want to blacklist classes)
     $wp_classes = array_intersect( $wp_classes, $whitelist );
     // Blacklist result: (uncomment if you want to blacklist classes)
-    # $wp_classes = array_diff( $wp_classes, $blacklist );
+	$wp_classes = array_diff( $wp_classes, $blacklist );
 
     // Add the extra classes back untouched
     return array_merge( $wp_classes, (array) $extra_classes );

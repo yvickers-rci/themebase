@@ -9,6 +9,8 @@ $themebase_defaults = array(
 	'meta_title_filter'=>true,          //add blog name and separator to meta title, usually set to false when an seo plugin is added
 	'local_jquery'=>false,
 	'jquery_version'=>1.8,
+	'bootstrap_styles'=>false,
+	'boostrap_styles_responsive'=>false,
 
 	'typekit_id'=>'',
 	'addthis_id'=>'',
@@ -20,6 +22,11 @@ $themebase_defaults = array(
 	'woocommerce'=>false,
 
 	'image_sizes'=>array(),
+
+	'nav_menus'=>array(),
+
+	'body_class_white_list'=>array( 'home', 'page', 'blog', 'archive', 'single', 'category', 'tag', 'error404', 'logged-in', 'admin-bar' ),
+	'body_class_black_list'=>array(),
 
     /**
 	 * Theme Base
