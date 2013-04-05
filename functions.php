@@ -73,8 +73,10 @@ function tb_get_setting($setting){
  * checks for client specific template file to use in place of themebase template
  */
 function tb_template_file($template){
-    global $themebase_settings;
-    $file = TEMPLATEPATH.'/'.$themebase_settings['core_directory'].'/templates/'.$template;
+	$client_directory = tb_get_setting('client_directory');
+	if('' == $client_directory) return;
+
+	$file = TEMPLATEPATH.'/'.$client_directory.'/templates/'.$template;
 
 	if(!is_file($file)){
 		return false;
