@@ -24,6 +24,7 @@ $themebase_defaults = array(
 	'typekit_id'=>'',
 	'addthis_id'=>'',
 	'ga_id'=>'',
+	'load_extended_tracking'=>true,
 
 	/**
 	 * This identifies menu locations that are available within the appearance > menus section of the admin
@@ -96,5 +97,7 @@ $themebase_defaults = array(
 		'functions/func-side_nav.php',
 		// Twitter Statuses
 		'functions/func-twitter.php',
+		// Extended Tracking Functions
+		'functions/func-tracking.php',
 	),
 );
